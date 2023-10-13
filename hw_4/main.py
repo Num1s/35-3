@@ -4,9 +4,6 @@ class SavingAccount:
 class CheckingAccount:
 	pass
 
-class BankAccount(SavingAccount, CheckingAccount):
-	pass
-
 class RealEstate:
 	pass
 
@@ -17,6 +14,9 @@ class Bond:
 	pass
 
 class Security(Stock, Bond):
+	pass
+
+class BankAccount(SavingAccount, CheckingAccount):
 	pass
 
 class InterestBearingItem(BankAccount, Security):
