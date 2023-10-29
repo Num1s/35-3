@@ -11,7 +11,7 @@ class Database:
 				id INTEGER,
 				name TEXT,
 				surname TEXT,
-				dob TEXT,
+				dob DATE,
 				hobby TEXT,
 				hw_points INTEGER
 			)'''
@@ -28,7 +28,7 @@ class Database:
 	async def remove_student(self):
 		async with aiosqlite.connect(self.name) as db:
 			cursor = await db.cursor()
-			query = 'DELETE FROM students WHERE id % 2 == 0'
+			query = 'DELETE FROM students WHERE rowid % 2 == 0'
 			await cursor.execute(query)
 			await db.commit()
 
