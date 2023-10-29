@@ -8,7 +8,6 @@ class Database:
 		async with aiosqlite.connect(self.name) as db:
 			cursor = await db.cursor()
 			query = '''CREATE TABLE IF NOT EXISTS students (
-				id INTEGER,
 				name TEXT,
 				surname TEXT,
 				dob DATE,
